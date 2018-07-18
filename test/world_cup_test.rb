@@ -10,22 +10,22 @@ class WorldCupTest < Minitest::Test
   def test_it_exists
     france = Team.new("France")
     croatia = Team.new("Croatia")
-    wc = WorldCup.new(2018, [france, croatia])
-    assert_instance_of WorldCup, wc
+    world_cup = WorldCup.new(2018, [france, croatia])
+    assert_instance_of WorldCup, world_cup
   end
 
   def test_it_has_a_year
     france = Team.new("France")
     croatia = Team.new("Croatia")
-    wc = WorldCup.new(2018, [france, croatia])
-    assert_equal 2018, wc.year
+    world_cup = WorldCup.new(2018, [france, croatia])
+    assert_equal 2018, world_cup.year
   end
 
   def test_it_has_teams
     france = Team.new("France")
     croatia = Team.new("Croatia")
-    wc = WorldCup.new(2018, [france, croatia])
-    assert_equal [france, croatia], wc.teams
+    world_cup = WorldCup.new(2018, [france, croatia])
+    assert_equal [france, croatia], world_cup.teams
   end
 
   def test_it_can_return_active_teams
