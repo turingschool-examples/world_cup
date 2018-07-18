@@ -53,4 +53,29 @@ class WorldCupTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_it_only_lists_active_players_if_team_eliminated
+    @croatia.eliminated = true
+
+    expected = [@mbappe, @griezmann]
+    actual   = @world_cup.active_players_by_position(:forward)
+
+    assert_equal expected, actual
+  end
+
+  def test_it_filters_inactive_teams_out
+    @croatia.eliminated = true
+
+    expected = [@france]
+    actual   = @world_cup.active_teams
+
+    assert_equal expected, actual
+  end
+
+  def test_it_returns_all_players_formatted
+    expected = "Defenders\n\t- Domagoj Vida\n\nForwards\n\t- Antoine Griezmann\n\t- Ivan Perisic\n\t- Kylian Mbappe\n\nMidfielders\n\t- Luka Modric\n\t- Paul Pogba"
+    actual   = @world_cup.all_players
+
+    assert_equal expected, actual
+  end
 end

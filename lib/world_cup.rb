@@ -10,11 +10,13 @@ class WorldCup
     @teams = teams
   end
 
-  def active_players_by_position(position)
-    active_teams = @teams.select do |team|
+  def active_teams
+    @teams.select do |team|
       team.eliminated? == false
     end
+  end
 
+  def active_players_by_position(position)
     players = active_teams.collect do |team|
       team.players_by_position(position)
     end
