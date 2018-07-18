@@ -68,6 +68,7 @@ class TeamTest < Minitest::Test
     france.add_player(pogba)
 
     assert_equal [pogba], france.players_by_position(:midfielder)
+    assert_equal [mbappe, griezmann], france.players_by_position(:forward)
   end
 
 end
