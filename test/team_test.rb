@@ -36,33 +36,31 @@ class TeamTest < Minitest::Test
     assert_equal true, france.eliminated?
   end
 
+  def test_team_can_add_players
+    france = Team.new("France")
+
+    mbappe = Player.new("Kylian Mbappe", :forward)
+    griezmann = Player.new("Antoine Griezmann", :forward)
+    pogba = Player.new("Paul Pogba", :midfielder)
+    france.add_player(mbappe)
+    france.add_player(griezmann)
+    france.add_player(pogba)
+
+    assert_equal [mbappe, griezmann, pogba], france.players
+  end
+
+  def test_it_can_list_players_by_postion
+    france = Team.new("France")
+
+    mbappe = Player.new("Kylian Mbappe", :forward)
+    griezmann = Player.new("Antoine Griezmann", :forward)
+    pogba = Player.new("Paul Pogba", :midfielder)
+    france.add_player(mbappe)
+    france.add_player(griezmann)
+    france.add_player(pogba)
+
+    assert_equal [pogba], france.players_by_position(:midfielder)
+    assert_equal [mbappe, griezmann], france.players_by_position(:forward)
+  end
+
 end
-
-
-
-# pry(main)> mbappe = Player.new("Kylian Mbappe", :forward)
-# #=> #<Player:0x00007feab803f688...>
-#
-# pry(main)> griezmann = Player.new("Antoine Griezmann", :forward)
-# #=> #<Player:0x00007feab7877a18...>
-#
-# pry(main)> pogba = Player.new("Paul Pogba", :midfielder)
-# #=> #<Player:0x00007feab71546f0...>
-#
-# pry(main)> france.add_player(mbappe)
-# #=> [#<Player:0x00007feab803f688...>]
-#
-# pry(main)> france.add_player(griezmann)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>]
-#
-# pry(main)> france.add_player(pogba)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>, #<Player:0x00007feab71546f0...>]
-#
-# pry(main)> france.players
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>, #<Player:0x00007feab71546f0...>]
-#
-# pry(main)> france.players_by_position(:midfielder)
-# #=> [#<Player:0x00007feab71546f0...>]
-#
-# pry(main)> france.players_by_position(:forward)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>]
