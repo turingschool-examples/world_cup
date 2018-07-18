@@ -4,8 +4,6 @@ require './lib/player'
 require './lib/team'
 
 class TeamTest < Minitest::Test
-
-
   def test_it_exists
     france = Team.new("France")
 
