@@ -31,9 +31,9 @@ class WorldCup
         positions << "#{pos}s"
       end
     end
-    positions.uniq
+    positions.uniq.sort
   end
-
+  # 
   # def all_players(standing = false)
   #   find_active_teams.map do |team|
   #     team.players.find_all do |player|
