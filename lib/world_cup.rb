@@ -29,9 +29,10 @@ class WorldCup
   end
 
   def format_position
-    @teams.map do |team|
-      require "pry"; binding.pry
-      team.players.position..to_s.upcase + "s"
+    x = @teams.map do |team|
+      team.players.map {|player| player.position.to_s.capitalize + "s"}
     end
+    x
+    require "pry"; binding.pry
   end
 end
