@@ -19,10 +19,23 @@ class TeamTest < Minitest::Test
     assert_equal [], france.players
   end
 
-  def test_if_it_is_eliminated
+  def test_can_eliminate
     france = Team.new("France")
     assert_equal false, france.eliminated?
-    france.eliminated 
+    france.eliminated
     assert_equal true, france.eliminated?
+  end
+
+  def test_can_add_players
+    france = Team.new("France")
+    mbappe = Player.new("Kylian Mbappe", :forward)
+    griezmann = Player.new("Antoine Griezmann", :forward)
+    pogba = Player.new("Paul Pogba", :midfielder)
+
+    france.add_player(mbappe)
+    france.add_player(griezmann)
+    france.add_player(pogba)
+
+    assert_equal [mbappe, griezmann, pogba], france.players
   end
 end
