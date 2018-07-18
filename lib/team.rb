@@ -17,4 +17,8 @@ class Team
     @standing = true
   end
 
+  def add_player(player)
+    @players << player
+  end
+
 end

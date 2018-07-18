@@ -43,4 +43,17 @@ class TeamTest < Minitest::Test
 
     assert_equal [mbappe], france.players
   end
+
+  def test_it_can_add_multiple_players
+    france = Team.new("France")
+    mbappe = Player.new("Kylian Mbappe", :forward)
+    griezmann = Player.new("Antoine Griezmann", :forward)
+    pogba = Player.new("Paul Pogba", :midfielder)
+
+    france.add_player(mbappe)
+    france.add_player(griezmann)
+    france.add_player(pogba)
+
+    assert_equal [mbappe, griezmann, pogba], france.players
+  end
 end
