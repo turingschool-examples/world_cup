@@ -23,8 +23,21 @@ class WorldCup
     end.flatten
   end
 
-  def all_players 
-
+  def position_names
+    positions = []
+    find_active_teams.map do |team|
+      team.players.find_all do |player|
+        pos = player.position.to_s.capitalize
+        positions << "#{pos}s"
+      end
+    end
+    positions.uniq
   end
 
+  # def all_players(standing = false)
+  #   find_active_teams.map do |team|
+  #     team.players.find_all do |player|
+  #       player.position
+  #
+  # end
 end
