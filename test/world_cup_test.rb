@@ -30,8 +30,9 @@ class WorldCupTest < Minitest::Test
     croatia.add_player(perisic)
     croatia.add_player(vida)
     world_cup = WorldCup.new(2018, [france, croatia])
-
-    assert_equal [mbappe, griezmann, perisic], world_cup.active_players_by_position(:forward)
+    expected = [mbappe, griezmann, perisic]
+    actual = world_cup.active_players_by_position(:forward)
+    assert_equal expected, actual
   end
 
   def test_active_players_in_world_cup_found_with_only_teams_non_eliminated
@@ -50,11 +51,10 @@ class WorldCupTest < Minitest::Test
     croatia.add_player(perisic)
     croatia.add_player(vida)
     world_cup = WorldCup.new(2018, [france, croatia])
-
     croatia.eliminated = true
+    expected = [mbappe, griezmann]
     actual = world_cup.active_players_by_position(:forward)
-    assert_equal [mbappe, griezmann],actual
-
+    assert_equal expected, actual
   end
 
   def test_all_players
