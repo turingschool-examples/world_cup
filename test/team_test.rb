@@ -67,4 +67,15 @@ class TeamTest < Minitest::Test
 
     assert_equal expected2, actual2
   end
+
+  def test_it_returns_players_name_by_position
+    @france.add_player(@mbappe)
+    @france.add_player(@griezmann)
+    @france.add_player(@pogba)
+
+    expected = ['Antoine Griezmann', 'Kylian Mbappe']
+    actual   = @france.name_by_position(:forward)
+
+    assert_equal expected, actual
+  end
 end

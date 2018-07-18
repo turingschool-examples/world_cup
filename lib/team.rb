@@ -27,4 +27,11 @@ class Team
       player.position == position
     end
   end
+
+  def name_by_position(position)
+    names = players_by_position(position).map do |player|
+      player.name
+    end
+    names.sort
+  end
 end

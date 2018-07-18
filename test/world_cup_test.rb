@@ -72,6 +72,13 @@ class WorldCupTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_generates_a_list_of_positions
+    expected = %i[defender forward midfielder]
+    actual   = @world_cup.all_positions
+
+    assert_equal expected, actual
+  end
+
   def test_it_returns_all_players_formatted
     expected = "Defenders\n\t- Domagoj Vida\n\nForwards\n\t- Antoine Griezmann\n\t- Ivan Perisic\n\t- Kylian Mbappe\n\nMidfielders\n\t- Luka Modric\n\t- Paul Pogba"
     actual   = @world_cup.all_players
