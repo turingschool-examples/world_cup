@@ -38,8 +38,18 @@ class WorldCupTest < Minitest::Test
   end
 
   def test_active_players_by_position
+    croatia = @croatia
     world_cup = WorldCup.new(2018, [@france, @croatia])
     assert_equal [@mbappe, @griezmann, @perisic], world_cup.active_players_by_position(:forward)
+    croatia.eliminated
+    assert_equal [@mbappe, @griezmann], world_cup.active_players_by_position(:forward)
   end
 
+  # def test_all_players
+  #   skip
+  #   world_cup = WorldCup.new(2018, [@france, @croatia])
+  #   assert_equal "Defenders\n\t- Domagoj Vida\n\nForwards\n\t- Antoine Griezmann\n\t- Ivan Perisic\n\t- Kylian Mbappe\n\nMidfielders\n\t- Luka Modric\n\t- Paul Pogba", world_cup.all_players
+  #   @croatia.eliminated
+  #   assert_equal "Forwards\n\t- Antoine Griezmann\n\t- Kylian Mbappe\n\nMidfielders\n\t- Paul Pogba", world_cup.all_players
+  # end
 end
