@@ -61,6 +61,4 @@ class TeamTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def 
-
 end
