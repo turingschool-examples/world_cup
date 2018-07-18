@@ -55,6 +55,6 @@ class WorldCupTest < Minitest::Test
     @croatia.eliminated = true
     expected = "Forwards\n\t- Antoine Griezmann\n\t- Kylian Mbappe\n\nMidfielders\n\t- Paul Pogba"
 
-    assert_equal @world_cup.all_players("yes"), expected
+    assert_equal @world_cup.all_players(true), expected
   end
 end

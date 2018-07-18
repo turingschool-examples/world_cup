@@ -18,10 +18,9 @@ class WorldCup
     players.flatten
   end
 
-  def all_players(active="no")
-    teams = @teams.select {|team| team.eliminated == false } if active == "yes"
-    #require "pry"; binding.pry
-    teams = @teams if active == "no"
+  def all_players(active=false)
+    teams = @teams.select {|team| team.eliminated == false } if active == true
+    teams = @teams if active == false
     defenders =  []
     teams.each do |team|
       defenders << team.players_by_position(:defender)
@@ -62,7 +61,7 @@ class WorldCup
       string = "Defenders\n\t" + "- " +
                 defenders.join(" \n\t- ") +
                 "\n\nForwards\n\t" + "- " +
-                forwards.join("\n\t- ") 
+                forwards.join("\n\t- ")
     else
       string = "Defenders\n\t" + "- " +
                 defenders.join(" \n\t- ") +
