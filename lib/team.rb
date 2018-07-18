@@ -21,7 +21,11 @@ class Team
     end
   end
 
-  def eliminated 
+  def create_team_position_hash
+
+  end
+
+  def eliminated
     @eliminated = true
   end
 end

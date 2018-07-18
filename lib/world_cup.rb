@@ -8,6 +8,7 @@ class WorldCup
   def initialize(year, teams)
     @year = year
     @teams = teams
+    @player_hash = {}
   end
 
   def active_players_by_position(position)
@@ -36,6 +37,14 @@ class WorldCup
   end
 
   def all_players
-    
+    @player_hash = position[active_players_by_position(position)]
+    # My thought process is this: In the active_players_by_position
+    # method, we input a position that returns us the players
+    # of that position. So if I'm able to make a Hash
+    # with the position as the key, and the return of the
+    # method as the value, I should be able to have easy
+    # access to print the key and value pairs.
+    # Or should I have made that hash of hashes earlier on?
+    # Now I'm thinking so lol 
   end
 end
