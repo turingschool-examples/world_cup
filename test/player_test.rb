@@ -17,10 +17,12 @@ class PlayerTest < Minitest::Test
     assert_equal "Paul Pogba", pogba.name
   end
 
-  def test_player_name
+  def test_player_position
     pogba = Player.new("Paul Pogba", :midfielder)
 
-    assert_equal "Paul Pogba", pogba.position 
+    assert_equal :midfielder, pogba.position
   end
+
+  
 
 end
