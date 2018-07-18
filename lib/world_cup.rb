@@ -53,6 +53,16 @@ class WorldCup
                 forwards.join("\n\t- ") +
                 "\n\nMidfielders\n\t" + "- " +
                 midfielders.join("\n\t- ")
+    elsif forwards.empty?
+      string = "Defenders\n\t" + "- " +
+                defenders.join(" \n\t- ") +
+                "\n\nMidfielders\n\t" + "- " +
+                midfielders.join("\n\t- ")
+    elsif midfielders.empty?
+      string = "Defenders\n\t" + "- " +
+                defenders.join(" \n\t- ") +
+                "\n\nForwards\n\t" + "- " +
+                forwards.join("\n\t- ") 
     else
       string = "Defenders\n\t" + "- " +
                 defenders.join(" \n\t- ") +
@@ -61,8 +71,6 @@ class WorldCup
                 "\n\nMidfielders\n\t" + "- " +
                 midfielders.join("\n\t- ")
     end
-            
-
 
     end
   end
