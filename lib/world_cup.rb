@@ -1,3 +1,4 @@
+require "pry"
 class WorldCup
   attr_reader :year, :teams
   def initialize(year, teams)
@@ -13,9 +14,12 @@ class WorldCup
           if team.player.position == position
             active_players_at_position << player
           end
-          return players_at_position
+          # return active_players_at_position
         end
+        return active_players_at_position
       end
-    end 
+
+    end
+    #binding.pry
   end
 end
