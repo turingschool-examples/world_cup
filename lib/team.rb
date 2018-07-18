@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require './lib/player'
+
 # Team class
 class Team
   attr_reader :country,
@@ -14,5 +16,15 @@ class Team
 
   def eliminated?
     @eliminated
+  end
+
+  def add_player(player)
+    @players << player
+  end
+
+  def players_by_position(position)
+    @players.select do |player|
+      player.position == position
+    end
   end
 end
