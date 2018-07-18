@@ -25,12 +25,12 @@ class WorldCup
   end
 
   def all_players
-    player_hash = {}
-    @teams.each do |team|
-      player_hash = team.players.group_by {|player| player.position}
+    teams_by_position = Hash.new
+    teams_by_position = @teams.map do |team|
+      team.players.group_by do |player|
+        player.position
+      end
     end
-    player_hash.each do |key, value|
-      
-    end
+    teams_by_position
   end
 end
