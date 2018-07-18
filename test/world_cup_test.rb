@@ -56,64 +56,22 @@ class WorldCupTest < Minitest::Test
     assert_equal [mbappe, griezmann], actual
   end
 
-
+  def test_all_players
+    france = Team.new("France")
+    mbappe = Player.new("Kylian Mbappe", :forward)
+    griezmann = Player.new("Antoine Griezmann", :forward)
+    pogba = Player.new("Paul Pogba", :midfielder)
+    france.add_player(mbappe)
+    france.add_player(griezmann)
+    france.add_player(pogba)
+    croatia = Team.new("Croatia")
+    modric = Player.new("Luka Modric", :midfielder)
+    perisic = Player.new("Ivan Perisic", :forward)
+    vida = Player.new("Domagoj Vida", :defender)
+    croatia.add_player(modric)
+    croatia.add_player(perisic)
+    croatia.add_player(vida)
+    world_cup = WorldCup.new(2018, [france, croatia])
+    world_cup.all_players
+  end
 end
-# pry(main)> france = Team.new("France")
-# #=> #<Team:0x00007feab6adeca8...>
-#
-# pry(main)> mbappe = Player.new("Kylian Mbappe", :forward)
-# #=> #<Player:0x00007feab803f688...>
-#
-# pry(main)> griezmann = Player.new("Antoine Griezmann", :forward)
-# #=> #<Player:0x00007feab7877a18...>
-#
-# pry(main)> pogba = Player.new("Paul Pogba", :midfielder)
-# #=> #<Player:0x00007feab71546f0...>
-#
-# pry(main)> france.add_player(mbappe)
-# #=> [#<Player:0x00007feab803f688...>]
-#
-# pry(main)> france.add_player(griezmann)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>]
-#
-# pry(main)> france.add_player(pogba)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>, #<Player:0x00007feab71546f0...>]
-#
-# pry(main)> croatia = Team.new("Croatia")
-# #=> #<Team:0x00007fce3c0b83c8...>
-#
-# pry(main)> modric = Player.new("Luka Modric", :midfielder)
-# #=> #<Player:0x00007fce3b996450...>
-#
-# pry(main)> perisic = Player.new("Ivan Perisic", :forward)
-# #=> #<Player:0x00007fce3d0891f8...>
-#
-# pry(main)> vida = Player.new("Domagoj Vida", :defender)
-# #=> #<Player:0x00007fce3bb69b10...>
-#
-# pry(main)> croatia.add_player(modric)
-# #=> [#<Player:0x00007fce3b996450...>]
-#
-# pry(main)> croatia.add_player(perisic)
-# #=> [#<Player:0x00007fce3b996450...>, #<Player:0x00007fce3d0891f8...>]
-#
-# pry(main)> croatia.add_player(vida)
-# #=> [#<Player:0x00007fce3b996450...>, #<Player:0x00007fce3d0891f8...>, #<Player:0x00007fce3bb69b10...>]
-#
-# pry(main)> world_cup = WorldCup.new(2018, [france, croatia])
-# #=> #<WorldCup:0x00007fce3b908858...>
-#
-# pry(main)> world_cup.year
-# #=> 2018
-#
-# pry(main)> world_cup.teams
-# #=> [#<Team:0x00007fce3c091f70...>, #<Team:0x00007fce3c0b83c8...>
-#
-# pry(main)> world_cup.active_players_by_position(:forward)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>, #<Player:0x00007fce3d0891f8...>]
-#
-# pry(main)> croatia.eliminated = true
-# #=> true
-#
-# pry(main)> world_cup.active_players_by_position(:forward)
-# #=> [#<Player:0x00007feab803f688...>, #<Player:0x00007feab7877a18...>]
