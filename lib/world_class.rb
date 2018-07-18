@@ -23,4 +23,8 @@ class WorldCup
     end.flatten
   end
 
+  def all_players 
+
+  end
+
 end
