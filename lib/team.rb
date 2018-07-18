@@ -6,6 +6,15 @@ class Team
   def initialize(country)
     @country = country
     @players = []
+    @standing = false
+  end
+
+  def eliminated?
+    @standing
+  end
+
+  def eliminated
+    @standing = true
   end
 
 end
