@@ -52,7 +52,6 @@ class WorldCupTest < Minitest::Test
   end
 
   def test_it_can_return_active_players_by_position
-    skip
     france = Team.new("France")
     mbappe = Player.new("Kylian Mbappe", :forward)
     griezmann = Player.new("Antoine Griezmann", :forward)

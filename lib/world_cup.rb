@@ -14,12 +14,15 @@ class WorldCup
   end
 
   def active_players_by_position(player_position)
-    teams_not_eliminated.find_all_with_index do |team, i|
-      new_player_array = team.players.find_all do |player|
-      player.position == player_position
+    active_players = []
+    teams_not_eliminated.each do |team|
+      team.players.find_all do |player|
+        if player.position == player_position
+          active_players << player
+        end
+      end
     end
-    return new_player_array
-    end
+    return active_players
   end
     #if they are not eliminated, iterate through each of those teams...
     #to find all player.position equal to player_position
