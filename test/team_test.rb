@@ -18,7 +18,7 @@ class TeamTest < Minitest::Test
     assert_equal "France", @team.country
   end
 
-  def test_eliminated_attribute_is_false_as_default
+  def test_eliminated_attribute_is_false_by_default
     assert_equal false, @team.eliminated
   end 
 

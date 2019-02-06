@@ -1,6 +1,6 @@
 class Team
-  attr_reader :country, :eliminated, :players
-  attr_writer :eliminated
+  attr_reader :country, :players
+  attr_accessor :eliminated
 
   def initialize(country)
     @country    = country 
@@ -14,7 +14,7 @@ class Team
 
   def add_player(player)
     players << player
-  end 
+  end
 
   def players_by_position(position)
     players.select do |player|
