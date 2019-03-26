@@ -20,6 +20,25 @@ describe WorldCup do
     @world_cup = WorldCup.new(2018, [@france, @croatia])
   end
 
-  
+  it "has a year" do
+    expect(@world_cup.year).to eq(2018)
+  end
+
+  it "has two teams" do
+    expect(@world_cup.teams).to eq([@france, @croatia])
+  end
+
+  it "can list players by position" do
+    expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @vida])
+  end
+
+  context "eliminated croatia" do
+    before do
+      @croatia.eliminated = true
+    end
+
+    it "active players update according to which teams are eliminated" do
+      expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @vida])
+    end
 
 end
