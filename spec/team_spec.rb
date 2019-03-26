@@ -23,7 +23,7 @@ describe Team do
     end
 
     it "can be eliminated" do
-      expect(@team.eliminated).to be true
+      expect(@team.eliminated?).to be true
     end
 
     context "add players" do
@@ -34,12 +34,13 @@ describe Team do
       end
 
       it "has players" do
-        expect(@team.players).to eq[@mbappe, @pogba]
+        expect(@team.players).to eq([@mbappe, @pogba])
       end
 
-      it "has players by position"
-        expect(@team.players_by_position("midfielder")).to eq(@pogba)
-        expect(@team.players_by_position("defender")).to_eq(@mbappe)
+      it "has players by position" do
+        expect(@team.players_by_position("midfielder")).to eq([@pogba])
+        expect(@team.players_by_position("forward")).to eq([@mbappe])
       end
     end
   end
+end
