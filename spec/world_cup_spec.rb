@@ -29,7 +29,7 @@ describe WorldCup do
   end
 
   it "can list players by position" do
-    expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @vida])
+    expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @modric])
   end
 
   context "eliminated croatia" do
@@ -38,7 +38,7 @@ describe WorldCup do
     end
 
     it "active players update according to which teams are eliminated" do
-      expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @vida])
+      expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @modric])
     end
-
+  end
 end
