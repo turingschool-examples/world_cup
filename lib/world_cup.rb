@@ -13,4 +13,14 @@ class WorldCup
     all_players.flatten
   end
 
+  def all_players_by_position
+    positionhash = Hash.new([])
+    @teams.each do |team|
+      team.players.each do |player|
+        positionhash[player.position] = positionhash[player.position]
+      end
+    end
+    positionhash.each_key{|key| positionhash[key] = active_players_by_position(key)}
+  end
+
 end

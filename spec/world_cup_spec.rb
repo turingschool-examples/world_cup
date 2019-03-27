@@ -28,8 +28,16 @@ describe WorldCup do
     expect(@world_cup.teams).to eq([@france, @croatia])
   end
 
-  it "can list players by position" do
+  it "can list all active players by position" do
     expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @modric])
+  end
+
+  it "can generate list of all active players sorted by position" do
+    result = {"forward" => [@mbappe],
+    "midfielder" => [@pogba, @modric],
+    "defender" => [@vida]}
+
+    expect(@world_cup.all_players_by_position).to eq(result)
   end
 
   context "eliminated croatia" do
