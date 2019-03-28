@@ -16,4 +16,18 @@ class WorldCup
     all_players.flatten
   end
 
+  def all_players_by_position
+    all_players = {}
+    @teams.each do |team|
+      team.players.each do |player|
+        unless all_players.keys.include?(player.position)
+          all_players[player.position] = [player]
+        else
+          all_players[player.position] << player
+        end
+      end
+    end
+    all_players
+  end
+
 end
