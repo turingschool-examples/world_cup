@@ -18,8 +18,8 @@ class TeamTest < Minitest::Test
     refute @team.eliminated?
   end
 
-  def test_it_can_be_eliminated_through_attr_accessor
-    @team.elimnated = true
+  def test_it_can_be_eliminated_through_attr_writer
+    @team.eliminated = true
 
     assert @team.eliminated?
   end
@@ -36,7 +36,7 @@ class TeamTest < Minitest::Test
   end
 
   def test_it_can_sort_players_by_position
-    @team.add_player(@mgappe)
+    @team.add_player(@mbappe)
     @team.add_player(@pogba)
 
     assert_equal [@pogba], @team.players_by_position("midfielder")
