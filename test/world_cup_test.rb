@@ -40,4 +40,5 @@ class WorldCupTest < Minitest::Test
   def test_it_can_return_a_hash_of_all_players_by_position
     players_hash = {"forward" => [@mbappe], "midfielder" => [@pogba, @modric], "defender" => [@vida]}
     assert_equal players_hash, @world_cup.all_players_by_position
+  end
 end
