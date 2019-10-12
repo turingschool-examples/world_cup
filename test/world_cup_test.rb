@@ -39,6 +39,15 @@ class WorldCupTest < Minitest::Test
     @croatia.eliminated = true
     assert_equal [@pogba], @world_cup.active_players_by_position("midfielder")
     @france.eliminated = true
-    assert_equal [], @world_cup.active_players_by_position("midfielder")    
+    assert_equal [], @world_cup.active_players_by_position("midfielder")
+  end
+
+  def test_it_can_return_hash_of_all_players_by_position
+    expected_hash = {
+                      "forward" => [@mbappe],
+                      "midfielder" => [@pogba, @modric],
+                      "defender" => [@vida]
+                    }
+    assert_equal expected_hash, @world_cup.all_players_by_position
   end
 end
