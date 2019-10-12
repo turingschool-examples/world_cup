@@ -11,4 +11,10 @@ class WorldCup
       team.players_by_position(position_str)
     end
   end
+
+  def all_players_by_position
+    @teams.collect_concat { |team| team.players}.group_by do |player|
+      player.position
+    end
+  end
 end
