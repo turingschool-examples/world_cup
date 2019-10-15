@@ -44,7 +44,7 @@ class TeamTest < Minitest::Test
     # skip
     @team.add_player(@mbappe)
     @team.add_player(@pogba)
-    assert_equal @pogba, @team.players_by_position("midfielder")
-    assert_equal [], @team.players_by_position("midfielder")
+    assert_equal [@pogba], @team.players_by_position("midfielder")
+    assert_equal [], @team.players_by_position("defender")
   end
 end
