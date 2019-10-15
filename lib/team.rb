@@ -24,11 +24,8 @@ class Team
   end
 
   def players_by_position(position)
-    player_set = []
-    @players.each do |player|
-      if player.position == position
-        player_set << player
-      end
+    player_set = @players.find_all do |player|
+      player.position == position
     end
     player_set
   end
