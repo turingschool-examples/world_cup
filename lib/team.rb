@@ -12,4 +12,8 @@ class Team
     @eliminated
   end
 
+  def add_player(player_parameter)
+    @players << player_parameter
+  end
+
 end
