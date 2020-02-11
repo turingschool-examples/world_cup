@@ -16,4 +16,7 @@ class Team
     @players << player_parameter
   end
 
+  def players_by_position(position_parameter)
+    @players.select { |player| player.position == position_parameter }
+  end
 end
