@@ -22,4 +22,11 @@ class TeamTest < Minitest::Test
 
     assert_equal false, team.eliminated?
   end
+
+  def test_it_can_be_eliminated
+    team = Team.new("France")
+    team.eliminated = true
+
+    assert_equal true, team.eliminated?
+  end
 end
