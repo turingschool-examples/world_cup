@@ -11,7 +11,6 @@ class TeamTest < Minitest::Test
     @team = Team.new("France")
     @mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
     @pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
-
   end
 
   def test_it_exists
@@ -38,8 +37,10 @@ class TeamTest < Minitest::Test
   end
 
   def test_it_can_separate_players_by_position
+    @team.add_player(@mbappe)
+    @team.add_player(@pogba)
     assert_equal [@pogba], @team.players_by_position("midfielder")
-    assert_equal [], team.players_by_position("defender")
+    assert_equal [], @team.players_by_position("defender")
   end
 
 

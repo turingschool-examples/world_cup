@@ -17,6 +17,9 @@ class Team
   end
 
   def players_by_position(position)
+    @players.find_all do |player|
+      player.position.include? position
+    end
 
   end
 
