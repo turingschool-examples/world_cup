@@ -43,16 +43,4 @@ class TeamTest < Minitest::Test
     assert_equal [], @team.players_by_position("defender")
   end
 
-
-
 end
-
-
-
-
-# pry(main)> team.players_by_position("midfielder")
-# # => [#<Player:0x00007fe0d0851138...>]
-#
-# pry(main)> team.players_by_position("defender")
-# # => []
-# ```
