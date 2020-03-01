@@ -41,12 +41,3 @@ class WorldCupTest < Minitest::Test
 
 
 end
-
-
-
-
-# pry(main)> croatia.eliminated = true
-#
-# pry(main)> world_cup.active_players_by_position("midfielder")
-# # => [#<Player:0x00007f936c035eb0...>]
-# ```
