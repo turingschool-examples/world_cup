@@ -179,8 +179,8 @@ pry(main)> world_cup = WorldCup.new(2018, [france, croatia])
 world_cup.all_players_by_position
 # =>
 #   {
-#     "forward" => [#<Player:0x00007ffb3a8a8fd0...>],
-#     "midfielder" => [#<Player:0x00007ffb39a2dd48...>, #<Player:0x00007ffb3a054730...>],
-#     "defender" => [#<Player:0x00007ffb3a8dbb38...>]
+#     "forward" => [#<Player:0x00007f936a9168b0...>],
+#     "midfielder" => [#<Player:0x00007f936c035eb0...>, #<Player:0x00007f936a3595f8...>],
+#     "defender" => [#<Player:0x00007f936a318f08...>]
 #   }
 ```
