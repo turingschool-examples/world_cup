@@ -1,0 +1,24 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require './lib/player'
+
+class PlayerTest < Minitest::Test
+
+  def test_it_exists_and_has_attributes
+    player = Player.new({name: "Luka Modric", position: "midfielder"})
+
+    assert_instance_of Player, player
+  end
+
+  def test_name
+    player = Player.new({name: "Luka Modric", position: "midfielder"})
+
+    assert_equal "Luka Modric", player.name
+  end
+
+  def test_position
+    player = Player.new({name: "Luka Modric", position: "midfielder"})
+
+    assert_equal "midfielder", player.position 
+  end
+end
