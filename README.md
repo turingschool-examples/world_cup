@@ -4,6 +4,18 @@
 
 * Fork this Repository
 * Clone your forked repo to your computer.
+* Make sure you have `RSpec` installed globally:
+  - `$ gem install rspec`
+  - `$ rspec -v`, if installed you should see something like:
+  ```rb
+    RSpec 3.10
+      - rspec-core 3.10.0
+      - rspec-expectations 3.10.0
+      - rspec-mocks 3.10.0
+      - rspec-rails 4.0.1
+      - rspec-support 3.10.0
+  ```
+ - To run the tests: `$ rspec test`. You can also run an individual file: `$ rspec test/FILE.rb` or even a single test: `$ rspec test/file_spec.rb:LINE NUMBER`
 * Complete the activity below.
 * Push your solution to your forked repo
 * Submit a pull request from your repository to this repository
@@ -17,7 +29,7 @@ Use TDD to create a `Player` class that responds to the following interaction pa
 pry(main)> require './lib/player'
 # => true
 
-pry(main)> player = Player.new({name: "Luka Modric", position: "midfielder"})    
+pry(main)> player = Player.new({name: "Luka Modric", position: "midfielder"})
 # => #<Player:0x00007fd8273d21e0...>
 
 pry(main)> player.name
@@ -38,7 +50,7 @@ pry(main)> require './lib/team'
 pry(main)> require './lib/player'
 # => true
 
-pry(main)> team = Team.new("France")    
+pry(main)> team = Team.new("France")
 # => #<Team:0x00007fe0d0335d48...>
 
 pry(main)> team.country
@@ -58,12 +70,12 @@ pry(main)> team.players
 pry(main)> mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
 # => #<Player:0x00007fe0d02bd280...>
 
-pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})    
+pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
 # => #<Player:0x00007fe0d0851138...>
 
 pry(main)> team.add_player(mbappe)
 
-pry(main)> team.add_player(pogba)    
+pry(main)> team.add_player(pogba)
 
 pry(main)> team.players
 # => [#<Player:0x00007fe0d02bd280...>, #<Player:0x00007fe0d0851138...>]
@@ -92,30 +104,30 @@ pry(main)> require './lib/player'
 pry(main)> france = Team.new("France")
 # => #<Team:0x00007f936a313698...>
 
-pry(main)> mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})    
+pry(main)> mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
 # => #<Player:0x00007f936a9168b0...>
 
-pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})    
+pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
 # => #<Player:0x00007f936c035eb0...>
 
-pry(main)> france.add_player(mbappe)    
+pry(main)> france.add_player(mbappe)
 
-pry(main)> france.add_player(pogba)    
+pry(main)> france.add_player(pogba)
 
-pry(main)> croatia = Team.new("Croatia")    
+pry(main)> croatia = Team.new("Croatia")
 # => #<Team:0x00007f936a3afea8...>
 
-pry(main)> modric = Player.new({name: "Luka Modric", position: "midfielder"})    
+pry(main)> modric = Player.new({name: "Luka Modric", position: "midfielder"})
 # => #<Player:0x00007f936a3595f8...>
 
-pry(main)> vida = Player.new({name: "Domagoj Vida", position: "defender"})    
+pry(main)> vida = Player.new({name: "Domagoj Vida", position: "defender"})
 # => #<Player:0x00007f936a318f08...>
 
-pry(main)> croatia.add_player(modric)    
+pry(main)> croatia.add_player(modric)
 
-pry(main)> croatia.add_player(vida)    
+pry(main)> croatia.add_player(vida)
 
-pry(main)> world_cup = WorldCup.new(2018, [france, croatia])    
+pry(main)> world_cup = WorldCup.new(2018, [france, croatia])
 # => #<WorldCup:0x00007f936a010d10...>
 
 pry(main)> world_cup.year
@@ -127,7 +139,7 @@ pry(main)> world_cup.teams
 pry(main)> world_cup.active_players_by_position("midfielder")
 # => [#<Player:0x00007f936c035eb0...>, #<Player:0x00007f936a3595f8...>]
 
-pry(main)> croatia.eliminated = true    
+pry(main)> croatia.eliminated = true
 
 pry(main)> world_cup.active_players_by_position("midfielder")
 # => [#<Player:0x00007f936c035eb0...>]
@@ -150,30 +162,30 @@ pry(main)> require './lib/player'
 pry(main)> france = Team.new("France")
 # => #<Team:0x00007f936a313698...>
 
-pry(main)> mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})    
+pry(main)> mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
 # => #<Player:0x00007f936a9168b0...>
 
-pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})    
+pry(main)> pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
 # => #<Player:0x00007f936c035eb0...>
 
-pry(main)> france.add_player(mbappe)    
+pry(main)> france.add_player(mbappe)
 
-pry(main)> france.add_player(pogba)    
+pry(main)> france.add_player(pogba)
 
-pry(main)> croatia = Team.new("Croatia")    
+pry(main)> croatia = Team.new("Croatia")
 # => #<Team:0x00007f936a3afea8...>
 
-pry(main)> modric = Player.new({name: "Luka Modric", position: "midfielder"})    
+pry(main)> modric = Player.new({name: "Luka Modric", position: "midfielder"})
 # => #<Player:0x00007f936a3595f8...>
 
-pry(main)> vida = Player.new({name: "Domagoj Vida", position: "defender"})    
+pry(main)> vida = Player.new({name: "Domagoj Vida", position: "defender"})
 # => #<Player:0x00007f936a318f08...>
 
-pry(main)> croatia.add_player(modric)    
+pry(main)> croatia.add_player(modric)
 
-pry(main)> croatia.add_player(vida)    
+pry(main)> croatia.add_player(vida)
 
-pry(main)> world_cup = WorldCup.new(2018, [france, croatia])    
+pry(main)> world_cup = WorldCup.new(2018, [france, croatia])
 # => #<WorldCup:0x00007f936a010d10...>
 
 world_cup.all_players_by_position
