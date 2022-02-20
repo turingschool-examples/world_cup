@@ -1,4 +1,5 @@
 class Team
+  attr_accessor :eliminated
   attr_reader :country, :players
   def initialize(country)
     @country = country
