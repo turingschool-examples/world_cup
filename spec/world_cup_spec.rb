@@ -13,7 +13,7 @@ describe WorldCup do
 
   croatia = Team.new("Croatia")
   modric = Player.new({name: "Luka Modric", position: "midfielder"})
-  vida = Player.new({name: "Luka Modric", position: "defender"})
+  vida = Player.new({name: "Domagoj Vida", position: "defender"})
   croatia.add_player(modric)
   croatia.add_player(vida)
 
@@ -31,5 +31,14 @@ describe WorldCup do
   it "removes players who's team has been eliminated" do
     croatia.eliminated = true
     expect(world_cup.active_players_by_position("midfielder")).to eq([pogba])
+  end
+
+
+  it "can list all players by their position" do
+    expect(world_cup.all_players_by_position).to eq({
+      "forward" => [mbappe],
+      "midfielder" => [pogba, modric],
+      "defender" => [vida]
+      })
   end
 end
